@@ -1,0 +1,9 @@
+SET( SOURCE_PATH ${CMAKE_SOURCE_DIR}/src )
+
+LINK_DIRECTORIES( ${SOURCE_PATH} )
+INCLUDE_DIRECTORIES( ${SOURCE_PATH} )
+ 
+ADD_EXECUTABLE( adorable_tests adorable_tests.t.cpp $<TARGET_OBJECTS:adorable> )
+
+TARGET_LINK_LIBRARIES( adorable_tests ${GTEST} ${GMOCK} ${GTEST_MAIN} )
+
